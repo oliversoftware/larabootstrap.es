@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+route::get('/','PaginasController@inicio');
+route::get('/crear','PaginasController@create');
+route::get('/articulos','PaginasController@store');
+route::get('/mostrar','PaginasController@show');
+route::get('/contacto','PaginasController@contactar');
+route::get('/galeria','PaginasController@galeria');
+
+
+
+
