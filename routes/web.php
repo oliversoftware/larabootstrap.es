@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-route::get('/','PaginasController@inicio');
+route::get('/','PaginasController@index');
 route::get('/crear','PaginasController@create');
 route::get('/articulos','PaginasController@store');
 route::get('/mostrar','PaginasController@show');

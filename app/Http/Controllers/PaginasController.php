@@ -96,6 +96,8 @@ class PaginasController extends Controller
     public function galeria()
     {
         //
-        return view("galeria");
+
+        $alumnos= ['Ana','Sara','Antonio','Manuel'];
+        return view("galeria", compact("alumnos"));
     }
 }
