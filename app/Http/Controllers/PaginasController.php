@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaginasController extends Controller
 {
@@ -99,5 +100,15 @@ class PaginasController extends Controller
 
         $alumnos= ['Ana','Sara','Antonio','Manuel'];
         return view("galeria", compact("alumnos"));
+    }
+
+    public function insertar()
+    {
+        //
+
+        DB::insert("INSERT INTO articulos (nombre_articulo, precio, pais_origen, seccion, observaciones)
+                    VALUES ('NAVAJA',15,'SUIZA','UTENSILIOS','CORTE FINO' )
+        ");
+        return "Artículo insertardo";
     }
 }
