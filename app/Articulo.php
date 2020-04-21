@@ -1,13 +1,17 @@
 <?php
 
 namespace App;
-
+use App\Cliente;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Articulo extends Model
 {
     //
+
+    public function cliente(){
+        return $this->belongsTo("App\Cliente");
+    }
 
    // protected $table="articulos";
 
@@ -25,4 +29,10 @@ class Articulo extends Model
 
 
     ];
+
+    public function calificaciones(){
+        return $this->morphMany("App\Calificaciones","calificacion");
+    }
+
+
 }

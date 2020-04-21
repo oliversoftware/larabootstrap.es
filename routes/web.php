@@ -111,16 +111,47 @@ $r=Articulo::find(4)->delete();
     echo $r;
 
 });
-
+/*
 Route::get('/cliente/{id}/', function ($id) {
-
-
-
-
 
     return Cliente::find($id)->articulo;
 
 });
+*/
+
+Route::get('/articulo/{id}/cliente', function ($id) {
+
+    $r=Articulo::find($id)->cliente->nombre;
+    return $r;
+
+});
+
+Route::get('/articulos', function () {
+
+    $r=Cliente::find(3)->articulos;
+    foreach ( $r as $index) {
+        echo $index->nombre_articulo;
+    }
+
+});
+
+Route::get('/cliente/{id}/perfil', function ($id) {
+
+    $r=Cliente::find($id)->perfils;
+   return $r[0] ->nombre;
+
+});
+
+Route::get('/calificaciones', function () {
+
+    $cliente=Cliente::find(1);
+
+        foreach ($cliente->calificaciones as $calificacion ){
+            return $calificacion->calificacion;
+        }
+
+});
+
 
 
 
